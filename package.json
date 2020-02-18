@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "nodemon server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "node",
+    "timestamp"
+  ],
+  "author": "Adarsh Nanwani",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
