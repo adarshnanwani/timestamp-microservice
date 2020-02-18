@@ -19,7 +19,11 @@ const checkAndReturnDate = date_str => {
 router.get("/:date_string", (req, res) => {
   const date_string = req.params.date_string;
   const newDate = checkAndReturnDate(date_string);
-  res.json({ unix: newDate.getTime(), utc: newDate.toUTCString() });
+  if (newDate.toUTCString() === "Invalid Date") {
+    res.json({ error: "Invalid Date" });
+  } else {
+    res.json({ unix: newDate.getTime(), utc: newDate.toUTCString() });
+  }
 });
 
 module.exports = router;
